@@ -6,10 +6,10 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:WeSplit"
     Shell.FlyoutBehavior="Disabled"
+    Title="WeSplit"
     >
 
     <ShellContent
-        Title="WeSplit"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
 
