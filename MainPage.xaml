@@ -2,25 +2,51 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WeSplit.MainPage"
+             Background="{AppThemeBinding Light=#f9f9f9, Dark=#272727}"
              >
-
     <Grid>
         <ScrollView Background="{AppThemeBinding Light=#f9f9f9, Dark=#272727}">
             <VerticalStackLayout
-            Spacing="25"
-            Padding="30,0"
-            VerticalOptions="Center"
-            Background="{AppThemeBinding Light=#f9f9f9, Dark=#272727}"
+                Spacing="10"
+                Padding="25,25"
+                VerticalOptions="Center"
+                Background="{AppThemeBinding Light=#f9f9f9, Dark=#272727}"
+                MaximumWidthRequest="600"
             >
-                <Grid ColumnSpacing="10" MaximumWidthRequest="500">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="Auto"/>
-                    </Grid.ColumnDefinitions>
-                    <Entry Grid.Column="0" Text="$0.00" HorizontalOptions="FillAndExpand" Background="{AppThemeBinding Light=#f6f6f6, Dark=#323232}"/>
-                    <Picker x:Name="PeopleCountPicker" Grid.Column="1" HorizontalOptions="FillAndExpand">
-                    </Picker>
-                </Grid>
+                <Border StrokeThickness="1" Stroke="{AppThemeBinding Light=#e5e5e5, Dark=#1d1d1d}" Background="{AppThemeBinding Light=#fbfbfb, Dark=#2b2b2b}">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="5"/>
+                    </Border.StrokeShape>
+                    <VerticalStackLayout Spacing="25" Margin="20,20,20,20">
+                        <VerticalStackLayout Spacing="5">
+                            <Label Text="Price of meal" Opacity="1" />
+                            <Grid ColumnSpacing="10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Entry Grid.Column="0" Placeholder="$80.00" HorizontalOptions="FillAndExpand" Background="{AppThemeBinding Light=#f6f6f6, Dark=#323232}"/>
+                                <Picker Grid.Column="1" x:Name="PeopleCountPicker" HorizontalOptions="Fill" Background="{AppThemeBinding Light=#f6f6f6, Dark=#323232}"/>
+                            </Grid>
+                        </VerticalStackLayout>
+                        <VerticalStackLayout Spacing="5">
+                            <Label Text="Percentage of tips to leave" Opacity="1" Grid.Column="0" Grid.Row="1"/>
+                            <Grid>
+                                <Slider x:Name="TipPercentageSlider" ValueChanged="TipPercentageSlider_ValueChanged" Minimum="0" Maximum="25"  HorizontalOptions="FillAndExpand" Margin="50,0,0,0"/>
+                                <Label x:Name="TipPercentageText" Text="10%" FontSize="20" HorizontalOptions="Start" VerticalOptions="Center"/>
+                            </Grid>
+                        </VerticalStackLayout>
+                    </VerticalStackLayout>
+                </Border>
+                <Border StrokeThickness="1" Stroke="{AppThemeBinding Light=#e5e5e5, Dark=#1d1d1d}" Background="{AppThemeBinding Light=#fbfbfb, Dark=#2b2b2b}">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="5"/>
+                    </Border.StrokeShape>
+                    <VerticalStackLayout Margin="20">
+                        <Label Text="Total amount payable per person:"/>
+                        <Label Text="$69.99" FontSize="50" FontAttributes="Bold"/>
+                    </VerticalStackLayout>
+                </Border>
             </VerticalStackLayout>
         </ScrollView>
     </Grid>
