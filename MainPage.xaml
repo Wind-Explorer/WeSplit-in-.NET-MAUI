@@ -12,14 +12,13 @@
             VerticalOptions="Center"
             Background="{AppThemeBinding Light=#f9f9f9, Dark=#272727}"
             >
-
-                <Grid ColumnSpacing="10" MaximumWidthRequest="600">
+                <Grid ColumnSpacing="10" MaximumWidthRequest="500">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
                     <Entry Grid.Column="0" Text="$0.00" HorizontalOptions="FillAndExpand" Background="{AppThemeBinding Light=#f6f6f6, Dark=#323232}"/>
-                    <Picker x:Name="PeopleCountPicker" Grid.Column="1" HorizontalOptions="Center">
+                    <Picker x:Name="PeopleCountPicker" Grid.Column="1" HorizontalOptions="FillAndExpand">
                     </Picker>
                 </Grid>
             </VerticalStackLayout>
