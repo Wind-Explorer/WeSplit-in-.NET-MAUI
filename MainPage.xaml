@@ -4,21 +4,25 @@
              x:Class="WeSplit.MainPage"
              >
 
-    <ScrollView>
-        <VerticalStackLayout
+    <Grid>
+        <ScrollView Background="{AppThemeBinding Light=#f9f9f9, Dark=#272727}">
+            <VerticalStackLayout
             Spacing="25"
             Padding="30,0"
-            VerticalOptions="Center">
+            VerticalOptions="Center"
+            Background="{AppThemeBinding Light=#f9f9f9, Dark=#272727}"
+            >
 
-            <Grid ColumnSpacing="10" MaximumWidthRequest="600">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <Entry Grid.Column="0" Text="$0.00" HorizontalOptions="FillAndExpand"/>
-                <Picker x:Name="PeopleCountPicker" Grid.Column="1" HorizontalOptions="Center">
-                </Picker>
-            </Grid>
-        </VerticalStackLayout>
-    </ScrollView>
+                <Grid ColumnSpacing="10" MaximumWidthRequest="600">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Entry Grid.Column="0" Text="$0.00" HorizontalOptions="FillAndExpand" Background="{AppThemeBinding Light=#f6f6f6, Dark=#323232}"/>
+                    <Picker x:Name="PeopleCountPicker" Grid.Column="1" HorizontalOptions="Center">
+                    </Picker>
+                </Grid>
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
 </ContentPage>
