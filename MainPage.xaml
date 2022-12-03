@@ -25,8 +25,8 @@
                                     <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="Auto"/>
                                 </Grid.ColumnDefinitions>
-                                <Entry Grid.Column="0" Placeholder="$80.00" HorizontalOptions="FillAndExpand" Background="{AppThemeBinding Light=#f6f6f6, Dark=#323232}"/>
-                                <Picker Grid.Column="1" x:Name="PeopleCountPicker" HorizontalOptions="Fill" Background="{AppThemeBinding Light=#f6f6f6, Dark=#323232}"/>
+                                <Entry x:Name="CostTextBox" Grid.Column="0" TextChanged="CostTextBox_TextChanged" Placeholder="80.00" HorizontalOptions="FillAndExpand" Background="{AppThemeBinding Light=#f6f6f6, Dark=#323232}"/>
+                                <Picker Grid.Column="1" x:Name="PeopleCountPicker" SelectedIndexChanged="PeopleCountPicker_SelectedIndexChanged" HorizontalOptions="Fill" Background="{AppThemeBinding Light=#f6f6f6, Dark=#323232}"/>
                             </Grid>
                         </VerticalStackLayout>
                         <VerticalStackLayout Spacing="5">
@@ -44,7 +44,7 @@
                     </Border.StrokeShape>
                     <VerticalStackLayout Margin="20">
                         <Label Text="Total amount payable per person:"/>
-                        <Label Text="$69.99" FontSize="50" FontAttributes="Bold"/>
+                        <Label x:Name="AmountPayablePerPerson" Text="$69.99" FontSize="50" FontAttributes="Bold"/>
                     </VerticalStackLayout>
                 </Border>
             </VerticalStackLayout>
